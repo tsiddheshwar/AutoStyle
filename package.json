@@ -1,0 +1,38 @@
+{
+  "name": "autostyle",
+  "version": "0.1.1",
+  "description": "Framework-agnostic HTML5 styling library.",
+  "keywords": [
+    "css",
+    "styles",
+    "html5",
+    "react",
+    "angular",
+    "vue",
+    "library"
+  ],
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "style": "dist/autostyle.css",
+  "exports": {
+    "./styles": "./dist/autostyle.css",
+    "./styles/min": "./dist/autostyle.min.css",
+    "./theme": "./dist/theme.mjs",
+    "./theme-browser": "./dist/theme.iife.js",
+    "./autostyle.css": "./dist/autostyle.css",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "node ./scripts/build.mjs",
+    "prepack": "npm run build",
+    "serve:demo": "node ./scripts/serve-demo.mjs",
+    "verify:demo": "node ./scripts/verify-demo.mjs",
+    "verify:package": "npm pack --dry-run"
+  }
+}

@@ -1,0 +1,65 @@
+img,
+video,
+canvas,
+svg,
+iframe,
+embed,
+object,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+audio,
+video {
+  width: 100%;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figcaption {
+  margin-top: var(--as-space-2);
+  font-size: 0.9rem;
+}
+
+table,
+th,
+td {
+  border-color: currentColor;
+}
+
+table {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: var(--as-space-2);
+}
+
+thead,
+tbody,
+tfoot,
+tr {
+  border-bottom: 1px solid currentColor;
+}
+
+th,
+td {
+  text-align: left;
+  padding: var(--as-space-2) var(--as-space-3);
+}
+
+th {
+  font-weight: 600;
+}

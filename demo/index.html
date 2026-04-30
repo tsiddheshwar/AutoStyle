@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AutoStyle HTML5 Tag Demo</title>
+    <link rel="stylesheet" href="../dist/autostyle.css" />
+    <style>
+      body {
+        padding: var(--as-space-4);
+      }
+
+      #shell {
+        border: 1px solid currentColor;
+        border-radius: var(--as-radius);
+        padding: var(--as-space-4);
+      }
+
+      #toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--as-space-2);
+        margin-bottom: var(--as-space-4);
+      }
+
+      #toolbar output {
+        display: inline-block;
+        margin: 0;
+      }
+
+      [data-panel] {
+        border: 1px solid currentColor;
+        border-radius: var(--as-radius);
+        padding: var(--as-space-3);
+        margin-bottom: var(--as-space-3);
+      }
+
+      #grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+        gap: var(--as-space-3);
+      }
+
+      #table-wrap,
+      #code-wrap {
+        overflow-x: auto;
+      }
+
+      #hierarchy-table {
+        display: table;
+        min-width: 56rem;
+        width: 100%;
+      }
+
+      #hierarchy-table thead th,
+      #hierarchy-table tbody td,
+      #hierarchy-table tfoot td {
+        border: 1px solid currentColor;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: inherit;
+        opacity: 0.7;
+      }
+
+      iframe,
+      object,
+      embed {
+        width: 100%;
+        min-height: 8rem;
+        border: 1px solid currentColor;
+      }
+
+      #canvas {
+        border: 1px solid currentColor;
+        width: 100%;
+        max-width: 24rem;
+      }
+
+      #media-box {
+        border: 1px solid currentColor;
+        border-radius: var(--as-radius);
+        min-height: 8rem;
+        display: grid;
+        place-items: center;
+        text-align: center;
+      }
+
+      @media (max-width: 36rem) {
+        #toolbar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="shell">
+      <header>
+        <h1>AutoStyle HTML5 Tag and Behavior Demo</h1>
+        <p>
+          This page demonstrates HTML5 tags and their default behavior with AutoStyle applied. The focus is text and
+          layout formatting in monochrome light and dark modes.
+        </p>
+      </header>
+
+      <nav id="toolbar" aria-label="Theme controls">
+        <button id="toggle-theme" type="button">Toggle Theme</button>
+        <button id="system-theme" type="button">Use System Theme</button>
+        <output id="viewport-info" aria-live="polite"></output>
+      </nav>
+
+      <section id="grid" aria-label="HTML5 sections">
+        <article data-panel>
+          <h2>Text Semantics</h2>
+          <p>
+            <a href="#">link</a>, <strong>strong</strong>, <em>em</em>, <b>b</b>, <i>i</i>, <u>u</u>, <s>s</s>,
+            <small>small</small>, <mark>mark</mark>, <code>code</code>, <kbd>kbd</kbd>, <samp>samp</samp>,
+            <var>var</var>, <sub>sub</sub>, <sup>sup</sup>.
+          </p>
+          <p>
+            <abbr title="HyperText Markup Language">HTML</abbr>, <cite>cite</cite>, <q>q inline quotation</q>,
+            <dfn>dfn</dfn>, <time datetime="2026-04-30">time</time>, <data value="42">data</data>.
+          </p>
+          <p>
+            <bdi>abc-123</bdi> <bdo dir="rtl">bdo text direction</bdo> <ruby>漢 <rt>kan</rt> <rp>(</rp><rt>ji</rt><rp>)</rp></ruby>
+          </p>
+          <address>Address: 100 Demo Street, Layout City</address>
+          <p><ins>Inserted text</ins> and <del>deleted text</del>.</p>
+        </article>
+
+        <article data-panel>
+          <h2>Lists And Grouping</h2>
+          <h3>Unordered And Ordered</h3>
+          <ul>
+            <li>List item one</li>
+            <li>List item two</li>
+          </ul>
+          <ol>
+            <li>First</li>
+            <li>Second</li>
+          </ol>
+          <menu>
+            <li>Menu item</li>
+            <li>Menu item</li>
+          </menu>
+          <h3>Description List</h3>
+          <dl>
+            <dt>Term A</dt>
+            <dd>Definition A</dd>
+            <dt>Term B</dt>
+            <dd>Definition B</dd>
+          </dl>
+          <blockquote>
+            Blockquote text for spacing and border behavior.
+          </blockquote>
+          <pre><code>preformatted block
+line 2
+line 3</code></pre>
+          <hr />
+        </article>
+
+        <article data-panel>
+          <h2>Sectioning And Containers</h2>
+          <search>
+            <label for="search-input">Search</label>
+            <input id="search-input" type="search" placeholder="Search input" />
+          </search>
+          <section>
+            <h3>Nested Section</h3>
+            <p>Section content paragraph.</p>
+          </section>
+          <aside>
+            <p>Aside content.</p>
+          </aside>
+          <footer>
+            <p>Footer content inside panel.</p>
+          </footer>
+        </article>
+
+        <article data-panel>
+          <h2>Figure And Media</h2>
+          <figure>
+            <picture>
+              <source media="(max-width: 640px)" srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='white'/%3E%3Crect x='10' y='10' width='380' height='180' fill='none' stroke='black'/%3E%3Ctext x='200' y='105' text-anchor='middle' font-family='Segoe UI' font-size='16' fill='black'%3ESmall Source%3C/text%3E%3C/svg%3E" />
+              <img
+                id="map-image"
+                alt="Image with map"
+                usemap="#demo-map"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect width='800' height='400' fill='white'/%3E%3Crect x='20' y='20' width='760' height='360' fill='none' stroke='black' stroke-width='4'/%3E%3Ctext x='400' y='210' text-anchor='middle' font-family='Segoe UI' font-size='30' fill='black'%3EImage And Map%3C/text%3E%3C/svg%3E"
+              />
+            </picture>
+            <map name="demo-map">
+              <area shape="rect" coords="0,0,200,120" href="#" alt="Top left area" />
+            </map>
+            <figcaption>Figure with picture, source, img, map, and area.</figcaption>
+          </figure>
+          <audio controls>
+            <track kind="captions" srclang="en" label="English" default />
+          </audio>
+          <video controls>
+            <track kind="captions" srclang="en" label="English" default />
+          </video>
+          <div id="media-box" role="img" aria-label="Media placeholder">Media placeholder</div>
+        </article>
+
+        <article data-panel>
+          <h2>Table</h2>
+          <div id="table-wrap">
+            <table>
+              <caption>HTML table behavior</caption>
+              <colgroup>
+                <col span="1" />
+                <col span="1" />
+                <col span="1" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Tag</th>
+                  <th>Behavior</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>thead/tbody</td>
+                  <td>Grouped row sections</td>
+                  <td>Visible</td>
+                </tr>
+                <tr>
+                  <td>caption</td>
+                  <td>Table title</td>
+                  <td>Visible</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3">tfoot row</td>
+                </tr>
+              </tfoot>
+            </table>
+
+            <table id="hierarchy-table">
+              <caption>Large hierarchical table with rowspan and colspan</caption>
+              <colgroup>
+                <col span="1" />
+                <col span="2" />
+                <col span="2" />
+                <col span="2" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th rowspan="3" scope="col">Region</th>
+                  <th colspan="6" scope="colgroup">Quarterly Metrics</th>
+                </tr>
+                <tr>
+                  <th colspan="2" scope="colgroup">Q1</th>
+                  <th colspan="2" scope="colgroup">Q2</th>
+                  <th colspan="2" scope="colgroup">Q3</th>
+                </tr>
+                <tr>
+                  <th scope="col">Users</th>
+                  <th scope="col">Sessions</th>
+                  <th scope="col">Users</th>
+                  <th scope="col">Sessions</th>
+                  <th scope="col">Users</th>
+                  <th scope="col">Sessions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">North</th>
+                  <td>12,400</td>
+                  <td>35,220</td>
+                  <td>13,100</td>
+                  <td>37,980</td>
+                  <td>14,050</td>
+                  <td>40,140</td>
+                </tr>
+                <tr>
+                  <th scope="row">South</th>
+                  <td>9,820</td>
+                  <td>28,410</td>
+                  <td>10,260</td>
+                  <td>29,700</td>
+                  <td>11,040</td>
+                  <td>31,860</td>
+                </tr>
+                <tr>
+                  <th scope="row">East</th>
+                  <td>10,140</td>
+                  <td>30,030</td>
+                  <td>10,880</td>
+                  <td>32,250</td>
+                  <td>11,390</td>
+                  <td>33,740</td>
+                </tr>
+                <tr>
+                  <th scope="row">West</th>
+                  <td>8,970</td>
+                  <td>25,900</td>
+                  <td>9,420</td>
+                  <td>27,160</td>
+                  <td>10,040</td>
+                  <td>28,880</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="7">Totals and hierarchy are intentionally shown using colgroup, scope, rowspan, and colspan.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </article>
+
+        <article data-panel>
+          <h2>Forms</h2>
+          <form id="demo-form" oninput="sum.value = Number(a.value || 0) + Number(b.value || 0)">
+            <fieldset>
+              <legend>Input Types</legend>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Text input" />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="name@example.com" />
+
+              <label for="url">URL</label>
+              <input id="url" name="url" type="url" placeholder="https://example.com" />
+
+              <label for="date">Date</label>
+              <input id="date" name="date" type="date" />
+
+              <label for="color">Color</label>
+              <input id="color" name="color" type="color" />
+
+              <label for="range">Range</label>
+              <input id="range" name="range" type="range" min="0" max="100" />
+
+              <label for="city">Datalist</label>
+              <input id="city" name="city" list="cities" placeholder="Start typing" />
+              <datalist id="cities">
+                <option value="London"></option>
+                <option value="Bengaluru"></option>
+                <option value="Berlin"></option>
+              </datalist>
+
+              <label for="grouped">Select / Optgroup</label>
+              <select id="grouped" name="grouped">
+                <optgroup label="Group A">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                </optgroup>
+                <optgroup label="Group B">
+                  <option>Option 3</option>
+                  <option>Option 4</option>
+                </optgroup>
+              </select>
+
+              <label for="notes">Textarea</label>
+              <textarea id="notes" name="notes" placeholder="Textarea"></textarea>
+
+              <label for="a">A</label>
+              <input id="a" name="a" type="number" value="2" />
+              <label for="b">B</label>
+              <input id="b" name="b" type="number" value="3" />
+              <output name="sum" for="a b">5</output>
+
+              <label for="progress">Progress</label>
+              <progress id="progress" max="100" value="65">65%</progress>
+              <label for="meter">Meter</label>
+              <meter id="meter" min="0" max="100" value="70">70</meter>
+
+              <button type="submit">Submit</button>
+              <button type="reset">Reset</button>
+              <input type="button" value="Input Button" />
+            </fieldset>
+          </form>
+        </article>
+
+        <article data-panel>
+          <h2>Interactive</h2>
+          <details>
+            <summary>Details / Summary</summary>
+            <p>Expandable content for details behavior.</p>
+          </details>
+
+          <button id="open-dialog" type="button">Open Dialog</button>
+          <dialog id="demo-dialog">
+            <p>This is a dialog element.</p>
+            <form method="dialog">
+              <button id="close-dialog" type="submit" value="close">Close</button>
+            </form>
+          </dialog>
+        </article>
+
+        <article data-panel>
+          <h2>Embedded And Scripted</h2>
+          <iframe
+            title="Iframe demo"
+            srcdoc="<!doctype html><html><body><p>iframe srcdoc content</p></body></html>"
+          ></iframe>
+
+          <object
+            type="text/html"
+            data="data:text/html,%3C!doctype%20html%3E%3Chtml%3E%3Cbody%3E%3Cp%3Eobject%20embedded%20content%3C/p%3E%3C/body%3E%3C/html%3E"
+          >
+            object fallback text
+          </object>
+
+          <embed
+            type="text/html"
+            src="data:text/html,%3C!doctype%20html%3E%3Chtml%3E%3Cbody%3E%3Cp%3Eembed%20content%3C/p%3E%3C/body%3E%3C/html%3E"
+          />
+
+          <canvas id="canvas" width="360" height="120"></canvas>
+
+          <svg viewBox="0 0 320 100" role="img" aria-label="SVG sample">
+            <rect x="1" y="1" width="318" height="98" fill="none" stroke="currentColor"></rect>
+            <text x="160" y="56" text-anchor="middle" font-size="20" fill="currentColor">SVG sample</text>
+          </svg>
+
+          <math display="block" aria-label="Math sample">
+            <mrow>
+              <mi>a</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow><mo>-</mo><mi>b</mi><mo>±</mo><msqrt><msup><mi>b</mi><mn>2</mn></msup><mo>-</mo><mn>4</mn><mi>a</mi><mi>c</mi></msqrt></mrow>
+                <mrow><mn>2</mn><mi>a</mi></mrow>
+              </mfrac>
+            </mrow>
+          </math>
+        </article>
+
+        <article data-panel>
+          <h2>Slot And Template</h2>
+          <x-demo-box>
+            <span slot="title">Title Through Slot</span>
+            <span>Body Through Default Slot</span>
+          </x-demo-box>
+          <template id="template-note">
+            <p>This content stays inert inside template unless cloned.</p>
+          </template>
+        </article>
+
+        <article data-panel>
+          <h2>Non-Visual By Design</h2>
+          <p>
+            These HTML tags are intentionally non-rendered or document metadata: head, title, meta, link, base,
+            script, style, and template content.
+          </p>
+          <p>
+            The demo focuses on renderable behavior tags while still including representative usage for scripting and
+            embedding.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <script src="../dist/theme.iife.js"></script>
+    <script>
+      const manager = window.AutoStyleTheme.createAutoStyleTheme();
+      manager.init();
+      manager.followSystemTheme();
+
+      const viewportInfo = document.getElementById("viewport-info");
+      const toggleTheme = document.getElementById("toggle-theme");
+      const systemTheme = document.getElementById("system-theme");
+      const openDialog = document.getElementById("open-dialog");
+      const closeDialog = document.getElementById("close-dialog");
+      const demoDialog = document.getElementById("demo-dialog");
+      const canvas = document.getElementById("canvas");
+
+      function renderViewport() {
+        const width = Math.round(window.innerWidth);
+        const height = Math.round(window.innerHeight);
+        const ratio = (width / Math.max(height, 1)).toFixed(2);
+        viewportInfo.value = "Viewport: " + width + "x" + height + " | Aspect ratio: " + ratio;
+      }
+
+      toggleTheme.addEventListener("click", function () {
+        manager.toggleTheme();
+      });
+
+      systemTheme.addEventListener("click", function () {
+        manager.setTheme("system");
+      });
+
+      openDialog.addEventListener("click", function () {
+        demoDialog.showModal();
+      });
+
+      closeDialog.addEventListener("click", function () {
+        demoDialog.close("close");
+      });
+
+      if (canvas && canvas.getContext) {
+        const ctx = canvas.getContext("2d");
+        if (ctx) {
+          const textColor = getComputedStyle(document.body).color;
+          ctx.strokeStyle = textColor;
+          ctx.strokeRect(1, 1, 358, 118);
+          ctx.font = "20px Segoe UI";
+          ctx.fillStyle = textColor;
+          ctx.fillText("Canvas sample", 110, 68);
+        }
+      }
+
+      class DemoBox extends HTMLElement {
+        connectedCallback() {
+          const root = this.attachShadow({ mode: "open" });
+          root.innerHTML =
+            '<section style="border:1px solid currentColor;padding:0.75rem;border-radius:8px;">' +
+            '<header><slot name="title"></slot></header>' +
+            '<div><slot></slot></div>' +
+            '</section>';
+        }
+      }
+
+      if (!customElements.get("x-demo-box")) {
+        customElements.define("x-demo-box", DemoBox);
+      }
+
+      window.addEventListener("resize", renderViewport);
+      renderViewport();
+    </script>
+  </body>
+</html>

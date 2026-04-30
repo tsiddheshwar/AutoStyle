@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--as-font-size-root);
+  line-height: var(--as-line-height);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--as-font-family);
+  color: var(--as-fg);
+  background: var(--as-bg);
+  overflow-wrap: anywhere;
+}
+
+main,
+article,
+section,
+nav,
+aside,
+header,
+footer,
+figure,
+figcaption,
+details,
+summary,
+dialog,
+search {
+  display: block;
+}
+
+main,
+article,
+section,
+header,
+footer,
+nav,
+aside {
+  width: min(100% - (var(--as-space-4) * 2), var(--as-content-max));
+  margin-inline: auto;
+}
+
+head,
+title,
+meta,
+link,
+base,
+script,
+style,
+template {
+  display: none !important;
+}
