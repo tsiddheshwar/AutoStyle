@@ -1,6 +1,6 @@
 {
-  "name": "autostyle",
-  "version": "0.1.1",
+  "name": "first-style",
+  "version": "0.2.0",
   "description": "Framework-agnostic HTML5 styling library.",
   "keywords": [
     "css",
@@ -19,13 +19,13 @@
     "dist",
     "README.md"
   ],
-  "style": "dist/autostyle.css",
+  "style": "dist/first-style.css",
   "exports": {
-    "./styles": "./dist/autostyle.css",
-    "./styles/min": "./dist/autostyle.min.css",
+    "./styles": "./dist/first-style.css",
+    "./styles/min": "./dist/first-style.min.css",
     "./theme": "./dist/theme.mjs",
     "./theme-browser": "./dist/theme.iife.js",
-    "./autostyle.css": "./dist/autostyle.css",
+    "./first-style.css": "./dist/first-style.css",
     "./package.json": "./package.json"
   },
   "scripts": {

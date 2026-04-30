@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AutoStyle HTML5 Tag Demo</title>
-    <link rel="stylesheet" href="../dist/autostyle.css" />
+    <title>FirstStyle HTML5 Tag Demo</title>
+    <link rel="stylesheet" href="../dist/first-style.css" />
     <style>
       body {
-        padding: var(--as-space-4);
+        padding: var(--fs-space-4);
       }
 
       #shell {
         border: 1px solid currentColor;
-        border-radius: var(--as-radius);
-        padding: var(--as-space-4);
+        border-radius: var(--fs-radius);
+        padding: var(--fs-space-4);
       }
 
       #toolbar {
         display: flex;
         flex-wrap: wrap;
-        gap: var(--as-space-2);
-        margin-bottom: var(--as-space-4);
+        gap: var(--fs-space-2);
+        margin-bottom: var(--fs-space-4);
       }
 
       #toolbar output {
@@ -30,15 +30,15 @@
 
       [data-panel] {
         border: 1px solid currentColor;
-        border-radius: var(--as-radius);
-        padding: var(--as-space-3);
-        margin-bottom: var(--as-space-3);
+        border-radius: var(--fs-radius);
+        padding: var(--fs-space-3);
+        margin-bottom: var(--fs-space-3);
       }
 
       #grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
-        gap: var(--as-space-3);
+        gap: var(--fs-space-3);
       }
 
       #table-wrap,
@@ -80,7 +80,7 @@
 
       #media-box {
         border: 1px solid currentColor;
-        border-radius: var(--as-radius);
+        border-radius: var(--fs-radius);
         min-height: 8rem;
         display: grid;
         place-items: center;
@@ -98,9 +98,9 @@
   <body>
     <main id="shell">
       <header>
-        <h1>AutoStyle HTML5 Tag and Behavior Demo</h1>
+        <h1>FirstStyle HTML5 Tag and Behavior Demo</h1>
         <p>
-          This page demonstrates HTML5 tags and their default behavior with AutoStyle applied. The focus is text and
+          This page demonstrates HTML5 tags and their default behavior with FirstStyle applied. The focus is text and
           layout formatting in monochrome light and dark modes.
         </p>
       </header>
@@ -460,7 +460,7 @@ line 3</code></pre>
 
     <script src="../dist/theme.iife.js"></script>
     <script>
-      const manager = window.AutoStyleTheme.createAutoStyleTheme();
+      const manager = window.FirstStyleTheme.createFirstStyleTheme();
       manager.init();
       manager.followSystemTheme();
 

@@ -1,5 +1,5 @@
-const DEFAULT_STORAGE_KEY = "autostyle:theme";
-const DEFAULT_ATTRIBUTE = "data-as-theme";
+const DEFAULT_STORAGE_KEY = "first-style:theme";
+const DEFAULT_ATTRIBUTE = "data-fs-theme";
 
 function isBrowser() {
   return typeof window !== "undefined" && typeof document !== "undefined";
@@ -11,7 +11,7 @@ function canUseStorage() {
   }
 
   try {
-    const testKey = "__autostyle_test__";
+    const testKey = "__first_style_test__";
     window.localStorage.setItem(testKey, "1");
     window.localStorage.removeItem(testKey);
     return true;
@@ -63,7 +63,7 @@ function applyThemeToRoot(root, attribute, theme) {
   root.setAttribute(attribute, effective);
 }
 
-export function createAutoStyleTheme(options = {}) {
+export function createFirstStyleTheme(options = {}) {
   const storageKey = options.storageKey || DEFAULT_STORAGE_KEY;
   const attribute = options.attribute || DEFAULT_ATTRIBUTE;
   const root = resolveRoot(options.root);
@@ -158,4 +158,4 @@ export function createAutoStyleTheme(options = {}) {
   };
 }
 
-export default createAutoStyleTheme;
+export default createFirstStyleTheme;

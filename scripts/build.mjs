@@ -44,9 +44,9 @@ function minifyCss(css) {
 async function main() {
   await mkdir(distRoot, { recursive: true });
 
-  const css = await bundleCss(path.join(srcRoot, "autostyle.css"));
-  await writeFile(path.join(distRoot, "autostyle.css"), css, "utf8");
-  await writeFile(path.join(distRoot, "autostyle.min.css"), `${minifyCss(css)}\n`, "utf8");
+  const css = await bundleCss(path.join(srcRoot, "first-style.css"));
+  await writeFile(path.join(distRoot, "first-style.css"), css, "utf8");
+  await writeFile(path.join(distRoot, "first-style.min.css"), `${minifyCss(css)}\n`, "utf8");
 
   await copyFile(path.join(srcRoot, "theme.mjs"), path.join(distRoot, "theme.mjs"));
   await copyFile(path.join(srcRoot, "theme.iife.js"), path.join(distRoot, "theme.iife.js"));

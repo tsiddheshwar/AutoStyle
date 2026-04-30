@@ -22,7 +22,7 @@ figure {
 }
 
 figcaption {
-  margin-top: var(--as-space-2);
+  margin-top: var(--fs-space-2);
   font-size: 0.9rem;
 }
 
@@ -44,7 +44,7 @@ caption {
   caption-side: top;
   text-align: left;
   font-weight: 600;
-  margin-bottom: var(--as-space-2);
+  margin-bottom: var(--fs-space-2);
 }
 
 thead,
@@ -57,7 +57,7 @@ tr {
 th,
 td {
   text-align: left;
-  padding: var(--as-space-2) var(--as-space-3);
+  padding: var(--fs-space-2) var(--fs-space-3);
 }
 
 th {

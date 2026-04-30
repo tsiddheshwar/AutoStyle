@@ -1,40 +1,40 @@
 :root {
-  --as-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --as-mono-font-family: Consolas, "Courier New", monospace;
-  --as-bg: #ffffff;
-  --as-fg: #000000;
-  --as-line-height: 1.5;
-  --as-font-size-root: clamp(15px, 0.25vw + 14px, 18px);
-  --as-content-max: 78rem;
-  --as-space-1: clamp(0.2rem, 0.2vw + 0.15rem, 0.35rem);
-  --as-space-2: clamp(0.4rem, 0.35vw + 0.3rem, 0.65rem);
-  --as-space-3: clamp(0.6rem, 0.5vw + 0.45rem, 0.9rem);
-  --as-space-4: clamp(0.9rem, 0.7vw + 0.65rem, 1.25rem);
-  --as-space-5: clamp(1.2rem, 1vw + 0.9rem, 1.8rem);
-  --as-space-6: clamp(1.6rem, 1.5vw + 1.1rem, 2.6rem);
-  --as-radius: 8px;
+  --fs-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --fs-mono-font-family: Consolas, "Courier New", monospace;
+  --fs-bg: #ffffff;
+  --fs-fg: #000000;
+  --fs-line-height: 1.5;
+  --fs-font-size-root: clamp(15px, 0.25vw + 14px, 18px);
+  --fs-content-max: 78rem;
+  --fs-space-1: clamp(0.2rem, 0.2vw + 0.15rem, 0.35rem);
+  --fs-space-2: clamp(0.4rem, 0.35vw + 0.3rem, 0.65rem);
+  --fs-space-3: clamp(0.6rem, 0.5vw + 0.45rem, 0.9rem);
+  --fs-space-4: clamp(0.9rem, 0.7vw + 0.65rem, 1.25rem);
+  --fs-space-5: clamp(1.2rem, 1vw + 0.9rem, 1.8rem);
+  --fs-space-6: clamp(1.6rem, 1.5vw + 1.1rem, 2.6rem);
+  --fs-radius: 8px;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-as-theme]) {
-    --as-bg: #000000;
-    --as-fg: #ffffff;
+  :root:not([data-fs-theme]) {
+    --fs-bg: #000000;
+    --fs-fg: #ffffff;
   }
 }
 
-:root[data-as-theme="light"] {
-  --as-bg: #ffffff;
-  --as-fg: #000000;
+:root[data-fs-theme="light"] {
+  --fs-bg: #ffffff;
+  --fs-fg: #000000;
 }
 
-:root[data-as-theme="dark"] {
-  --as-bg: #000000;
-  --as-fg: #ffffff;
+:root[data-fs-theme="dark"] {
+  --fs-bg: #000000;
+  --fs-fg: #ffffff;
 }
 
 @media (orientation: landscape) and (max-height: 540px) {
   :root {
-    --as-space-4: clamp(0.75rem, 0.5vw + 0.55rem, 1rem);
-    --as-space-5: clamp(1rem, 0.7vw + 0.75rem, 1.4rem);
+    --fs-space-4: clamp(0.75rem, 0.5vw + 0.55rem, 1rem);
+    --fs-space-5: clamp(1rem, 0.7vw + 0.75rem, 1.4rem);
   }
 }

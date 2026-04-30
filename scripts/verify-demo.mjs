@@ -11,14 +11,14 @@ async function assertExists(relativePath) {
 }
 
 async function main() {
-  await assertExists("dist/autostyle.css");
-  await assertExists("dist/autostyle.min.css");
+  await assertExists("dist/first-style.css");
+  await assertExists("dist/first-style.min.css");
   await assertExists("dist/theme.mjs");
   await assertExists("dist/theme.iife.js");
 
   const demoHtml = await readFile(path.join(projectRoot, "demo/index.html"), "utf8");
-  if (!demoHtml.includes("../dist/autostyle.css")) {
-    throw new Error("demo/index.html must use ../dist/autostyle.css");
+  if (!demoHtml.includes("../dist/first-style.css")) {
+    throw new Error("demo/index.html must use ../dist/first-style.css");
   }
 
   if (!demoHtml.includes("../dist/theme.iife.js")) {

@@ -13,7 +13,7 @@ ul,
 fieldset,
 figure,
 table {
-  margin: 0 0 var(--as-space-4);
+  margin: 0 0 var(--fs-space-4);
 }
 
 h1,
@@ -112,7 +112,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: var(--as-mono-font-family);
+  font-family: var(--fs-mono-font-family);
   font-size: 0.95em;
 }
 
@@ -125,27 +125,27 @@ blockquote {
 
 pre {
   border: 1px solid currentColor;
-  border-radius: var(--as-radius);
-  padding: var(--as-space-3);
+  border-radius: var(--fs-radius);
+  padding: var(--fs-space-3);
   overflow: auto;
 }
 
 kbd {
   border: 1px solid currentColor;
   border-radius: 4px;
-  padding: 0 var(--as-space-2);
+  padding: 0 var(--fs-space-2);
 }
 
 blockquote {
   border-left: 2px solid currentColor;
   margin-left: 0;
-  padding-left: var(--as-space-4);
+  padding-left: var(--fs-space-4);
 }
 
 hr {
   border: 0;
   border-top: 1px solid currentColor;
-  margin: var(--as-space-5) 0;
+  margin: var(--fs-space-5) 0;
 }
 
 ol,
@@ -155,12 +155,12 @@ menu {
 }
 
 li {
-  margin: var(--as-space-1) 0;
+  margin: var(--fs-space-1) 0;
 }
 
 dl {
   display: grid;
-  gap: var(--as-space-2);
+  gap: var(--fs-space-2);
 }
 
 dt {

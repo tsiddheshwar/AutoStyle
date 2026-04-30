@@ -1,6 +1,6 @@
-# AutoStyle
+# FirstStyle
 
-AutoStyle is a framework-agnostic HTML5 styling library.
+FirstStyle is a framework-agnostic HTML5 styling library.
 
 Import it and forget it.
 
@@ -28,7 +28,7 @@ It does not provide:
 ## Install
 
 ```bash
-npm install autostyle
+npm install first-style
 ```
 
 ## Usage
@@ -41,7 +41,7 @@ Zero-config behavior after import:
 ### React
 
 ```js
-import "autostyle/styles";
+import "first-style/styles";
 ```
 
 ### Angular
@@ -50,21 +50,21 @@ Add to the styles array in `angular.json`:
 
 ```json
 "styles": [
-	"node_modules/autostyle/dist/autostyle.css"
+	"node_modules/first-style/dist/first-style.css"
 ]
 ```
 
 ### Vue
 
 ```js
-import "autostyle/styles";
+import "first-style/styles";
 ```
 
 ### Plain HTML
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="./node_modules/autostyle/dist/autostyle.css" />
+<link rel="stylesheet" href="./node_modules/first-style/dist/first-style.css" />
 ```
 
 ## Goals
@@ -75,7 +75,7 @@ import "autostyle/styles";
 
 ## Theme Support
 
-AutoStyle is theme-aware out of the box.
+FirstStyle is theme-aware out of the box.
 
 - Uses light mode by default.
 - Automatically adapts to system dark mode using `prefers-color-scheme`.
@@ -83,10 +83,10 @@ AutoStyle is theme-aware out of the box.
 
 ### Optional Manual Theme Override
 
-Use the `data-as-theme` attribute on the root element.
+Use the `data-fs-theme` attribute on the root element.
 
 ```html
-<html data-as-theme="dark">
+<html data-fs-theme="dark">
 ```
 
 Available values:
@@ -95,12 +95,12 @@ Available values:
 
 ## JavaScript Theme Helper
 
-AutoStyle includes an optional tiny helper with localStorage persistence for apps that want a manual theme toggle.
+FirstStyle includes an optional tiny helper with localStorage persistence for apps that want a manual theme toggle.
 
 ```js
-import { createAutoStyleTheme } from "autostyle/theme";
+import { createFirstStyleTheme } from "first-style/theme";
 
-const theme = createAutoStyleTheme();
+const theme = createFirstStyleTheme();
 theme.init(); // Applies stored preference or system theme
 ```
 
@@ -119,9 +119,9 @@ theme.init(); // Applies stored preference or system theme
 ```html
 <button id="theme-toggle" type="button">Toggle Theme</button>
 <script type="module">
-	import { createAutoStyleTheme } from "autostyle/theme";
+	import { createFirstStyleTheme } from "first-style/theme";
 
-	const manager = createAutoStyleTheme();
+	const manager = createFirstStyleTheme();
 	manager.init();
 
 	const stopFollowing = manager.followSystemTheme();
@@ -136,10 +136,10 @@ theme.init(); // Applies stored preference or system theme
 ### Browser Script Tag (No Modules)
 
 ```html
-<link rel="stylesheet" href="./node_modules/autostyle/dist/autostyle.css" />
-<script src="./node_modules/autostyle/dist/theme.iife.js"></script>
+<link rel="stylesheet" href="./node_modules/first-style/dist/first-style.css" />
+<script src="./node_modules/first-style/dist/theme.iife.js"></script>
 <script>
-	const manager = window.AutoStyleTheme.createAutoStyleTheme();
+	const manager = window.FirstStyleTheme.createFirstStyleTheme();
 	manager.init();
 	manager.followSystemTheme();
 </script>
@@ -148,14 +148,14 @@ theme.init(); // Applies stored preference or system theme
 Package export path for this build:
 
 ```js
-import "autostyle/theme-browser";
+import "first-style/theme-browser";
 ```
 
 ## Package Layout
 
 Published files:
-- `dist/autostyle.css`
-- `dist/autostyle.min.css`
+- `dist/first-style.css`
+- `dist/first-style.min.css`
 - `dist/theme.mjs`
 - `dist/theme.iife.js`
 
@@ -163,7 +163,7 @@ Source files stay modular under `src/modules` and are bundled during `npm run bu
 
 ## Browser Notes
 
-AutoStyle normalizes common layout and typography behavior, but some native controls remain browser-driven by design.
+FirstStyle normalizes common layout and typography behavior, but some native controls remain browser-driven by design.
 
 Expect small browser differences in:
 - `select` and `optgroup`

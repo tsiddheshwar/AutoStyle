@@ -4,7 +4,7 @@ form {
 
 label {
   display: inline-block;
-  margin-bottom: var(--as-space-2);
+  margin-bottom: var(--fs-space-2);
   font-weight: 500;
 }
 
@@ -24,8 +24,8 @@ progress {
 select,
 option,
 optgroup {
-  color: var(--as-fg);
-  background: var(--as-bg);
+  color: var(--fs-fg);
+  background: var(--fs-bg);
 }
 
 input,
@@ -51,7 +51,7 @@ textarea,
 button {
   border: 1px solid currentColor;
   border-radius: 6px;
-  padding: var(--as-space-2) var(--as-space-3);
+  padding: var(--fs-space-2) var(--fs-space-3);
   background: transparent;
 }
 
@@ -84,19 +84,19 @@ textarea:disabled {
 
 fieldset {
   border: 1px solid currentColor;
-  border-radius: var(--as-radius);
-  padding: var(--as-space-3);
+  border-radius: var(--fs-radius);
+  padding: var(--fs-space-3);
 }
 
 legend {
-  padding: 0 var(--as-space-2);
+  padding: 0 var(--fs-space-2);
   font-weight: 600;
 }
 
 details {
   border: 1px solid currentColor;
-  border-radius: var(--as-radius);
-  padding: var(--as-space-3);
+  border-radius: var(--fs-radius);
+  padding: var(--fs-space-3);
 }
 
 summary {
@@ -106,11 +106,11 @@ summary {
 
 dialog {
   border: 1px solid currentColor;
-  border-radius: var(--as-radius);
-  padding: var(--as-space-4);
+  border-radius: var(--fs-radius);
+  padding: var(--fs-space-4);
   max-width: 40rem;
-  color: var(--as-fg);
-  background: var(--as-bg);
+  color: var(--fs-fg);
+  background: var(--fs-bg);
 }
 
 dialog::backdrop {

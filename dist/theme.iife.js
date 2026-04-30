@@ -1,8 +1,8 @@
 (function (global) {
   "use strict";
 
-  var DEFAULT_STORAGE_KEY = "autostyle:theme";
-  var DEFAULT_ATTRIBUTE = "data-as-theme";
+  var DEFAULT_STORAGE_KEY = "first-style:theme";
+  var DEFAULT_ATTRIBUTE = "data-fs-theme";
 
   function isBrowser() {
     return typeof window !== "undefined" && typeof document !== "undefined";
@@ -14,7 +14,7 @@
     }
 
     try {
-      var testKey = "__autostyle_test__";
+      var testKey = "__first_style_test__";
       window.localStorage.setItem(testKey, "1");
       window.localStorage.removeItem(testKey);
       return true;
@@ -65,7 +65,7 @@
     root.setAttribute(attribute, effective);
   }
 
-  function createAutoStyleTheme(options) {
+  function createFirstStyleTheme(options) {
     var config = options || {};
     var storageKey = config.storageKey || DEFAULT_STORAGE_KEY;
     var attribute = config.attribute || DEFAULT_ATTRIBUTE;
@@ -165,7 +165,7 @@
     };
   }
 
-  global.AutoStyleTheme = {
-    createAutoStyleTheme: createAutoStyleTheme
+  global.FirstStyleTheme = {
+    createFirstStyleTheme: createFirstStyleTheme
   };
 })(typeof window !== "undefined" ? window : this);
